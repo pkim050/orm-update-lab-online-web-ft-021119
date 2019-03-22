@@ -47,8 +47,8 @@ class Student
 
   def self.find_by_name(name)
     sql = "SELECT * FROM students WHERE name = ?"
-    binding.pry
     DB[:conn].execute(sql, name).map {|element| self.new_from_db(element)}
+    binding.pry
   end
 
   def update
